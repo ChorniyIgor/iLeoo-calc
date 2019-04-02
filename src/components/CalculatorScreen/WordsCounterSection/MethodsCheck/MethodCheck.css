@@ -1,0 +1,21 @@
+.MethodCheck {
+  display: flex;
+}
+.MethodCheck > div {
+  border: 1px solid red;
+  flex-grow: 1;
+}
+.MethodCheck label {
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  display: block;
+  cursor: pointer;
+}
+.MethodCheck input[type="radio"] {
+  display: none;
+}
+
+.MethodCheck input:checked ~ label {
+  background: white;
+}
