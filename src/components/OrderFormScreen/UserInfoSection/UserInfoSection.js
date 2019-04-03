@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./UserInfoSection.css";
 import { connect } from "react-redux";
 import { updateUserInfo } from "../../../redux/actions/userInfo";
+import { sendOrderMessage } from "../../../redux/actions/app";
 
 const UserInfoSection = props => {
   const formRef = React.createRef();
@@ -15,6 +16,7 @@ const UserInfoSection = props => {
       message: formData.get("message")
     };
     props.updateUserInfo(userInfo);
+    props.sendOrderMessage();
   }
 
   return (
@@ -45,6 +47,9 @@ function mapDispatchToProps(dispatch) {
   return {
     updateUserInfo: userInfo => {
       dispatch(updateUserInfo(userInfo));
+    },
+    sendOrderMessage: () => {
+      dispatch(sendOrderMessage());
     }
   };
 }

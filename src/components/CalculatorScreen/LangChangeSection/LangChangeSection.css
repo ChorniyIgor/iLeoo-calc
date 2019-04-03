@@ -1,7 +1,51 @@
 .LangChangeSection {
   min-width: 240px;
+  position: relative;
+  padding-right: 20px;
 }
-
+.LangChangeSection:after {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.LangChangeSection {
+  min-width: 240px;
+}
 .Select {
   margin-bottom: 20px;
+  cursor: pointer;
+}
+.LangChangeSectionNumb {
+  text-align: left;
+  padding-top: 20px;
+  margin-bottom: 40px;
+}
+.LangChangeSectionNumb i {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  line-height: 30px;
+  background: white;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.LangChangeSectionNumb span {
+  padding-left: 8px;
+  color: white;
+}
+
+.AddLangBtn {
+  background: #eb7d13;
+  color: white;
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }

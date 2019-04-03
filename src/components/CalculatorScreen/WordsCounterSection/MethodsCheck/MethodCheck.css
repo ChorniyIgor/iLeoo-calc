@@ -1,8 +1,9 @@
 .MethodCheck {
   display: flex;
+  margin-bottom: 10px;
 }
 .MethodCheck > div {
-  border: 1px solid red;
+  outline: 1px solid rgba(0, 0, 0, 0.3);
   flex-grow: 1;
 }
 .MethodCheck label {
@@ -11,11 +12,15 @@
   box-sizing: border-box;
   display: block;
   cursor: pointer;
+  color: white;
+  background: #f8f2ec;
+  color: #6f6153;
 }
 .MethodCheck input[type="radio"] {
   display: none;
 }
 
 .MethodCheck input:checked ~ label {
-  background: white;
+  background: #eb7d13;
+  color: white;
 }

@@ -1,7 +1,28 @@
+.Drag_zoneWrap {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  position: relative;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.Drag_zoneLogo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  transform: translate(-50%, -50%);
+}
+.Drag_zoneLogo img {
+  max-width: 100%;
+  max-height: 100%;
+}
 .Drag_zone {
-  border: 1px solid red;
+  border: 2px dashed #403d3b;
   width: 100%;
-  height: 200px;
+  height: 250px;
+  outline: none;
+  position: relative;
 }
 .Drag_zoneList {
   list-style: none;
@@ -45,4 +66,11 @@
 .wordsCount {
   flex-basis: 25%;
   text-align: center;
+}
+.DownloadFilesMethodWordsRes {
+  display: block;
+  text-align: left;
+  padding-top: 15px;
+  font-size: 24px;
+  color: white;
 }

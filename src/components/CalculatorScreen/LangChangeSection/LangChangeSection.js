@@ -11,9 +11,9 @@ import {
 const LangChangeSection = props => {
   return (
     <section className={classes.LangChangeSection}>
-      <div>
+      <div className={classes.LangChangeSectionNumb}>
         <i>1</i>
-        <p>Sprache wählen</p>
+        <span>Sprache wählen</span>
       </div>
 
       <Select
@@ -36,7 +36,12 @@ const LangChangeSection = props => {
         );
       })}
 
-      <input type="button" value="Add new target lang" onClick={props.addNewTargetLang} />
+      <input
+        type="button"
+        value="Add new target lang"
+        onClick={props.addNewTargetLang}
+        className={classes.AddLangBtn}
+      />
     </section>
   );
 };

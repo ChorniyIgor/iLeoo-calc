@@ -33,7 +33,7 @@ export default (state = initialState, action) => {
       };
     case ADD_FILE: {
       const files = state.files;
-      files[action.file.path] = { wordsCount: false };
+      files[action.file.path] = { file: action.file, wordsCount: false };
       return {
         ...state,
         files: { ...files }

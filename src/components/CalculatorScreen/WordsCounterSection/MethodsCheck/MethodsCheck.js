@@ -25,6 +25,7 @@ const MethodCheck = props => {
           name="method_of_calculation"
           value="download_files"
           id="download_files"
+          checked={props.methodOfCalc === "download_files" ? true : false}
         />
         <label htmlFor="download_files">Dateien hochladen</label>
       </div>

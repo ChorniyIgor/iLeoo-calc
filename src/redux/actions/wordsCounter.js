@@ -1,5 +1,5 @@
 import Network from "../../Network";
-import {calcNewTotalPrice} from "./price";
+import { calcNewTotalPrice } from "./price";
 export const SET_METHOD_OF_CALC_WORDS = "SET_METHOD_OF_CALC_WORDS ";
 export const CHANGE_WORDS_COUNT_INPUT = "CHANGE_WORDS_COUNT_INPUT";
 export const ADD_TYPED_TEXT = "ADD_TYPED_TEXT";
@@ -23,8 +23,7 @@ export function changeWordCountInput(wordsCount) {
       wordsCount: count
     });
     dispatch(calcNewTotalPrice());
-  }
-
+  };
 }
 
 export function addTypedText(inputText) {
@@ -36,17 +35,17 @@ export function addTypedText(inputText) {
       s = s.replace(/\n /, "\n"); // exclude newline with a start spacing
       return s.split(" ").length;
     }
-      const text = {
-    contents: inputText,
-    wordsCount: countWords(inputText)
-  };
+    const text = {
+      contents: inputText,
+      wordsCount: countWords(inputText)
+    };
 
-  dispatch({
-    type: ADD_TYPED_TEXT,
-    text
-  });
-  dispatch(calcNewTotalPrice());
-  }
+    dispatch({
+      type: ADD_TYPED_TEXT,
+      text
+    });
+    dispatch(calcNewTotalPrice());
+  };
 }
 
 export function updateTotalFilesWords() {

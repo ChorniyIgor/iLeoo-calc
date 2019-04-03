@@ -6,6 +6,8 @@ import {
   addTypedText,
   changeWordCountInput
 } from "../../../../redux/actions/wordsCounter";
+import Textarea from "../../../../hoc/Textarea/Textarea";
+import Input from "../../../../hoc/Input/Input";
 
 import DownloadFilesMethod from "./DownloadFilesMethod/DownloadFilesMethod";
 const Method = props => {
@@ -13,14 +15,15 @@ const Method = props => {
     <div className={classes.Methods}>
       {props.methodOfCalc === "number_of_words" ? (
         <div>
-          <label>
-            <input
+          <label className={classes.MethodsInputWrap}>
+            <Input
               placeholder="Wortzahl"
               type="number"
               name="words"
               id="words1"
               tabIndex="1"
               value={props.wordsCountInput}
+              min="0"
               onInput={evt => {
                 props.changeWordCountInput(evt.target.value);
               }}
@@ -31,21 +34,19 @@ const Method = props => {
 
       {props.methodOfCalc === "text_input" ? (
         <div id="countSimbol">
-          <textarea
+          <Textarea
             name="text_input"
             placeholder="Text eingeben..."
             id="input_textarea"
-            cols={50}
-            rows={10}
             value={props.textInput.contents}
             onInput={evt => {
               props.addTypedText(evt.target.value);
             }}
           />
           <label>
-            Total:
-            <h2>{props.textInput.wordsCount}</h2>
-            <span>Wörter</span>
+            <span className={classes.MethodsWordsRes}>
+              Total: {props.textInput.wordsCount} Wörter
+            </span>
           </label>
         </div>
       ) : null}

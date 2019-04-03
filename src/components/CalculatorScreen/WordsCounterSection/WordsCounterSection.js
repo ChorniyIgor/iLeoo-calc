@@ -6,8 +6,10 @@ import classes from "./WordsCounterSection.css";
 export default props => {
   return (
     <section className={classes.WordsCounterSection}>
-      <i>2</i>
-      <p>Anzahl der Wörter</p>
+      <div className={classes.WordsCounterSectionNumb}>
+        <i>2</i>
+        <span>Anzahl der Wörter</span>
+      </div>
       <MetodthCheck />
       <Methods />
     </section>
