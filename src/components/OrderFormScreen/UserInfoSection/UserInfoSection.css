@@ -1,4 +1,68 @@
 .UserInfoSection {
   flex-basis: 70%;
-  border: 1px solid red;
+  border: 2px dashed white;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.UserInfoSectionHeader {
+  color: white;
+  margin-bottom: 50px;
+}
+.InputLabel {
+  max-width: 300px;
+  display: block;
+  text-align: left;
+  color: white;
+  margin-bottom: 10px;
+}
+.FormInputContainer {
+  display: flex;
+}
+.TextareaLabel {
+  text-align: left;
+  color: white;
+  flex-grow: 1;
+  padding-left: 20px;
+}
+.TextareaLabel span {
+  text-align: left;
+  display: block;
+}
+.Textarea {
+  height: 171px;
+  max-width: 600px;
+  display: block;
+}
+.sendBtn {
+  animation: blinking 3s infinite;
+  animation-timing-function: ease;
+  font-weight: 400;
+  background: #d83b0a;
+  color: white;
+  outline: none;
+  border: none;
+  font-size: 22px;
+  line-height: 25px;
+  padding: 8px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 50px;
+  margin: left;
+}
+
+@keyframes blinking {
+  0% {
+    background: #eb7d13;
+  }
+  50% {
+    background: #d83b0a;
+  }
+  100% {
+    background: #eb7d13;
+  }
 }

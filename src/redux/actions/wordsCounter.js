@@ -9,9 +9,12 @@ export const UPDATE_TOTAL_FILES_WORDS = "UPDATE_TOTAL_FILES_WORDS";
 export const DELETE_FILE = "DELETE_FILE";
 
 export function setMethodOfCalcWords(methodName) {
-  return {
-    type: SET_METHOD_OF_CALC_WORDS,
-    methodName
+  return dispatch => {
+    dispatch({
+      type: SET_METHOD_OF_CALC_WORDS,
+      methodName
+    });
+    dispatch(calcNewTotalPrice());
   };
 }
 

@@ -12,11 +12,18 @@ const MethodCheck = props => {
           name="method_of_calculation"
           value="number_of_words"
           id="number_of_words"
+          defaultChecked={props.methodOfCalc === "number_of_words" ? true : false}
         />
         <label htmlFor="number_of_words">Wortzahl</label>
       </div>
       <div>
-        <input type="radio" name="method_of_calculation" value="text_input" id="text_input" />
+        <input
+          type="radio"
+          name="method_of_calculation"
+          value="text_input"
+          id="text_input"
+          defaultChecked={props.methodOfCalc === "text_input" ? true : false}
+        />
         <label htmlFor="text_input">Text eingeben</label>
       </div>
       <div>
@@ -25,7 +32,7 @@ const MethodCheck = props => {
           name="method_of_calculation"
           value="download_files"
           id="download_files"
-          checked={props.methodOfCalc === "download_files" ? true : false}
+          defaultChecked={props.methodOfCalc === "download_files" ? true : false}
         />
         <label htmlFor="download_files">Dateien hochladen</label>
       </div>

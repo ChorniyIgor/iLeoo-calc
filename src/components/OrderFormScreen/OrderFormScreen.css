@@ -2,3 +2,19 @@
   display: flex;
   flex-grow: 1;
 }
+.BackBtn {
+  width: 50px;
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+  outline: none;
+  border: none;
+  background: white;
+  font-size: 30px;
+  margin-right: 20px;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+.BackBtn:hover {
+  opacity: 0.9;
+}

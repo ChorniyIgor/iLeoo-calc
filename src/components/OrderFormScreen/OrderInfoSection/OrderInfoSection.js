@@ -38,22 +38,22 @@ const OrderInfoSection = props => {
       <h3>1. Sprachpaar</h3>
       {getLanguagesList(props.languages)}
       <h3>2. Angehangte Dateien</h3>
-      {props.wordsCountInput > 0 ? <span>Words count: {props.wordsCountInput}</span> : null}
-      <br />
-      {props.textInput.contents.length > 0 ? (
-        <span>
-          Text: <br />
-          {props.textInput.contents}
-        </span>
+      {props.method === "number_of_words" && props.wordsCountInput > 0 ? (
+        <span>Words count: {props.wordsCountInput}</span>
       ) : null}
-      <br />
-      {}
-      <br />
-      {Object.keys(props.files).length > 0 ? <span>Files: {getFilesList(props.files)}</span> : null}
+      {props.method === "text_input" && props.textInput.contents.length > 0 ? (
+        <React.Fragment>
+          <span>Text:</span>
+          <span className={classes.InputText}>{props.textInput.contents}</span>
+        </React.Fragment>
+      ) : null}
+      {props.method === "download_files" && Object.keys(props.files).length > 0 ? (
+        <span>Files: {getFilesList(props.files)}</span>
+      ) : null}
       <h3>3. Eingeschhatfer Priez</h3>
-      <span>total price {props.totalPrice}</span>
+      <span>total price {props.totalPrice} €</span>
       <br />
-      <span>price per word {props.pricePerWord / 100}</span>
+      <span>price per word {props.pricePerWord / 100} €/Wort</span>
       <br />
       <span>Erhalten Sie Ihre Übersetzung bis zum</span>
       <br />
@@ -68,6 +68,7 @@ function mapStateToProps(state) {
     pricePerWord: state.price.pricePerWord,
     totalPrice: state.price.totalPrice,
     finalDate: state.price.finalDate,
+    method: state.wordsCounter.method,
     files: state.wordsCounter.files,
     textInput: state.wordsCounter.textInput,
     wordsCountInput: state.wordsCounter.wordsCountInput

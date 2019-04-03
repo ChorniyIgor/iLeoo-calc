@@ -42,6 +42,7 @@ const LangChangeSection = props => {
         onClick={props.addNewTargetLang}
         className={classes.AddLangBtn}
       />
+      <span className={classes.Security}>Sicherheitsgarantie</span>
     </section>
   );
 };

@@ -8,10 +8,15 @@ export function calcNewTotalPrice() {
     const state = getState();
     const wordsCounter = state.wordsCounter;
     const pricePerWord = state.price.pricePerWord;
+    const method = state.wordsCounter.method;
+    //   const totalWordsCount === "" text_input number_of_words download_files
     const totalWordsCount =
-      wordsCounter.wordsCountInput +
-      wordsCounter.textInput.wordsCount +
-      wordsCounter.filesWordsCountInput;
+      method === "text_input"
+        ? wordsCounter.textInput.wordsCount
+        : method === "number_of_words"
+        ? wordsCounter.wordsCountInput
+        : wordsCounter.filesWordsCountInput;
+
     const discount = state.price.discount;
     const discountValue = discount.active ? 1 - discount.value : 1;
     const newTotalPrice = ((totalWordsCount * pricePerWord) / 100) * discountValue;

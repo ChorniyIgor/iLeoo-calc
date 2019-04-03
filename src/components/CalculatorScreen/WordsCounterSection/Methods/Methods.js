@@ -22,7 +22,7 @@ const Method = props => {
               name="words"
               id="words1"
               tabIndex="1"
-              value={props.wordsCountInput}
+              defaultValue={props.wordsCountInput}
               min="0"
               onInput={evt => {
                 props.changeWordCountInput(evt.target.value);
@@ -38,7 +38,8 @@ const Method = props => {
             name="text_input"
             placeholder="Text eingeben..."
             id="input_textarea"
-            value={props.textInput.contents}
+            defaultValue={props.textInput.contents}
+            className={classes.Textarea}
             onInput={evt => {
               props.addTypedText(evt.target.value);
             }}
