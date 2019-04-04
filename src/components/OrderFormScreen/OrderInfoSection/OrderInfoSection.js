@@ -5,7 +5,7 @@ import classes from "./OrderInfoSection.css";
 const OrderInfoSection = props => {
   function getLanguagesList(languages) {
     return languages.source ? (
-      <ul>
+      <ul className={classes.LangList}>
         {languages.targetLanguagesItems.map((item, i) => {
           return item ? (
             <li key={i}>
@@ -18,7 +18,8 @@ const OrderInfoSection = props => {
   }
   function getFilesList(files) {
     return (
-      <ul>
+      <ul className={classes.FilesList}>
+        <h4>Files:</h4>
         {Object.keys(files).map((fileName, i) => {
           const fileInfo = files[fileName];
           return (
@@ -35,29 +36,42 @@ const OrderInfoSection = props => {
   }
   return (
     <div className={classes.OrderInfoSection}>
-      <h3>1. Sprachpaar</h3>
+      <h3>
+        <span>1</span>Sprachpaar
+      </h3>
       {getLanguagesList(props.languages)}
-      <h3>2. Angehangte Dateien</h3>
+      <h3>
+        <span>2</span>Angehangte Dateien
+      </h3>
       {props.method === "number_of_words" && props.wordsCountInput > 0 ? (
-        <span>Words count: {props.wordsCountInput}</span>
+        <span className={classes.wordsCountInfo}>Words count: {props.wordsCountInput}</span>
       ) : null}
       {props.method === "text_input" && props.textInput.contents.length > 0 ? (
-        <React.Fragment>
-          <span>Text:</span>
+        <div className={classes.InputTextContainer}>
+          <h4>Text:</h4>
           <span className={classes.InputText}>{props.textInput.contents}</span>
-        </React.Fragment>
+        </div>
       ) : null}
       {props.method === "download_files" && Object.keys(props.files).length > 0 ? (
-        <span>Files: {getFilesList(props.files)}</span>
+        <span>{getFilesList(props.files)}</span>
       ) : null}
-      <h3>3. Eingeschhatfer Priez</h3>
-      <span>total price {props.totalPrice} €</span>
-      <br />
-      <span>price per word {props.pricePerWord / 100} €/Wort</span>
-      <br />
-      <span>Erhalten Sie Ihre Übersetzung bis zum</span>
-      <br />
-      <span>{props.finalDate}</span>
+      <h3>
+        <span>3</span>Eingeschhatfer Priez
+      </h3>
+      <div className={classes.TotalText}>
+        Total price <span>{props.totalPrice} €</span>
+      </div>
+      <div className={classes.TotalText}>
+        Price per word <span>{props.pricePerWord / 100} €/Wort</span>
+      </div>
+      {props.finalDate !== 0 ? (
+        <React.Fragment>
+          <div className={classes.TotalText}>Erhalten Sie Ihre Übersetzung bis zum</div>
+          <div className={classes.TotalText}>
+            <span>{props.finalDate}</span>
+          </div>
+        </React.Fragment>
+      ) : null}
     </div>
   );
 };

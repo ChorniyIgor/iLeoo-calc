@@ -5,7 +5,8 @@ import Select from "react-select";
 import {
   setSourceLanguage,
   setTargetLanguage,
-  addNewTargetLang
+  addNewTargetLang,
+  deleteTargetLang
 } from "../../../redux/actions/languages";
 
 const LangChangeSection = props => {
@@ -22,27 +23,40 @@ const LangChangeSection = props => {
         className={classes.Select}
         defaultValue={props.source ? { label: props.source, value: props.source } : null}
       />
-
+      <i className={["fas", "fa-arrow-down", classes.ArrowDown].join(" ")} />
       {props.targetLanguagesItems.map((item, i) => {
         return (
-          <Select
-            name={i}
-            key={i}
-            options={props.targetLanguages}
-            onChange={props.setTargetLanguage}
-            className={classes.Select}
-            defaultValue={item ? { label: item, value: item } : null}
-          />
+          <div className={classes.SelectContainer} key={i}>
+            <Select
+              name={i}
+              key={i}
+              options={props.targetLanguages}
+              onChange={props.setTargetLanguage}
+              className={classes.Select}
+              value={item ? { label: item, value: item } : null}
+            />
+            {i > 0 ? (
+              <span
+                className={classes.DeleteLang}
+                onClick={() => {
+                  props.deleteTargetLang(i);
+                }}
+              >
+                <i className="fas fa-times" />
+              </span>
+            ) : null}
+          </div>
         );
       })}
 
-      <input
-        type="button"
-        value="Add new target lang"
-        onClick={props.addNewTargetLang}
-        className={classes.AddLangBtn}
-      />
-      <span className={classes.Security}>Sicherheitsgarantie</span>
+      {props.targetLanguagesItems.length < 5 ? (
+        <input
+          type="button"
+          value="+ Add new target lang"
+          onClick={props.addNewTargetLang}
+          className={classes.AddLangBtn}
+        />
+      ) : null}
     </section>
   );
 };
@@ -66,6 +80,9 @@ function mapDispatchToProps(dispatch) {
     },
     addNewTargetLang: () => {
       dispatch(addNewTargetLang());
+    },
+    deleteTargetLang: selectNumb => {
+      dispatch(deleteTargetLang(selectNumb));
     }
   };
 }

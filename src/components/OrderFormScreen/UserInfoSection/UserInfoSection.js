@@ -28,21 +28,17 @@ const UserInfoSection = props => {
         <div className={classes.FormInputContainer}>
           <div>
             <label className={classes.InputLabel}>
-              <span>Vorname</span>
-              <Input type="text" name="name" />
+              <Input type="text" name="lastName" placeholder="Nachname" />
             </label>
             <label className={classes.InputLabel}>
-              <span>Nachname</span>
-              <Input type="text" name="lastName" />
+              <Input type="text" name="email" placeholder="Email" />
             </label>
             <label className={classes.InputLabel}>
-              <span>Email</span>
-              <Input type="text" name="email" />
+              <Input type="text" name="name" placeholder="Vorname" />
             </label>
           </div>
           <label className={classes.TextareaLabel}>
-            <span>Anmerkungen</span>
-            <Textarea className={classes.Textarea} name="message" />
+            <Textarea className={classes.Textarea} name="message" placeholder="Anmerkungen" />
           </label>
         </div>
         <input

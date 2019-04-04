@@ -14,7 +14,10 @@ const MethodCheck = props => {
           id="number_of_words"
           defaultChecked={props.methodOfCalc === "number_of_words" ? true : false}
         />
-        <label htmlFor="number_of_words">Wortzahl</label>
+        <label htmlFor="number_of_words">
+          <i className={["fas", "fa-calculator", classes.Icon].join(" ")} />
+          Wortzahl
+        </label>
       </div>
       <div>
         <input
@@ -24,7 +27,10 @@ const MethodCheck = props => {
           id="text_input"
           defaultChecked={props.methodOfCalc === "text_input" ? true : false}
         />
-        <label htmlFor="text_input">Text eingeben</label>
+        <label htmlFor="text_input">
+          <i className={["far", "fa-edit", classes.Icon].join(" ")} />
+          Text eingeben
+        </label>
       </div>
       <div>
         <input
@@ -34,7 +40,10 @@ const MethodCheck = props => {
           id="download_files"
           defaultChecked={props.methodOfCalc === "download_files" ? true : false}
         />
-        <label htmlFor="download_files">Dateien hochladen</label>
+        <label htmlFor="download_files">
+          <i className={["fas", "fa-download", classes.Icon].join(" ")} />
+          Dateien hochladen
+        </label>
       </div>
     </div>
   );

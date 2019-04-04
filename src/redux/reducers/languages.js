@@ -1,7 +1,8 @@
 import {
   SET_SOURCE_LANGUAGE,
   SET_TARGET_LANGUAGE,
-  ADD_NEW_TARGET_LANG
+  ADD_NEW_TARGET_LANG,
+  DELETE_TARGET_LANG
 } from "../actions/languages";
 
 const initialState = {
@@ -95,17 +96,25 @@ export default (state = initialState, action) => {
         source: action.langName
       };
     case SET_TARGET_LANGUAGE: {
-      const newTargetLanguagesItems = state.targetLanguagesItems;
+      const newTargetLanguagesItems = [...state.targetLanguagesItems];
       newTargetLanguagesItems.splice(action.selectId, 1, action.langName);
       return {
         ...state,
-        target: newTargetLanguagesItems
+        targetLanguagesItems: newTargetLanguagesItems
       };
     }
     case ADD_NEW_TARGET_LANG: {
       return {
         ...state,
         targetLanguagesItems: [...state.targetLanguagesItems, undefined]
+      };
+    }
+    case DELETE_TARGET_LANG: {
+      const newTargetLanguagesItems = [...state.targetLanguagesItems];
+      newTargetLanguagesItems.splice(action.selectNumb, 1);
+      return {
+        ...state,
+        targetLanguagesItems: [...newTargetLanguagesItems]
       };
     }
     default:

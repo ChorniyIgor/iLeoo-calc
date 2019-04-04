@@ -1,5 +1,6 @@
 .Methods {
   flex-grow: 1;
+  min-height: 320px;
 }
 .MethodsWordsRes {
   display: block;

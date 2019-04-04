@@ -8,12 +8,9 @@ import classes from "./OrderFormScreen.css";
 const OrderFormScreen = props => {
   return (
     <React.Fragment>
-      <input
-        type="button"
-        className={classes.BackBtn}
-        value="<"
-        onClick={props.showCalculatorScreen}
-      />
+      <button className={classes.BackBtn} onClick={props.showCalculatorScreen}>
+        <i className={["fas", "fa-arrow-left", classes.ArrowLeft].join(" ")} /> Back
+      </button>
       <div className={classes.OrderFormScreen}>
         <OrderInfoSection />
         <UserInfoSection />

@@ -1,14 +1,26 @@
 .App {
+  background: url("./assets/img/bg.jpg") center;
+  height: 100vh;
 }
 .CalcBody {
   background: rgba(0, 0, 0, 0.85);
   text-align: center;
-  display: flex;
   padding: 20px;
+  padding-bottom: 30px;
   min-height: 300px;
   width: 100%;
   max-width: 1200px;
   border-radius: 20px;
   margin: auto;
   min-height: 472px;
+  position: relative;
+}
+.Security {
+  color: white;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+.Security i {
+  margin-right: 5px;
 }

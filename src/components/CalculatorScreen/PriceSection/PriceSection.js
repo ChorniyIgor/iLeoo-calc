@@ -18,11 +18,18 @@ const PriceSection = props => {
         <span className={classes.MwSt}>zzgl. Grundpreis und MwSt.</span>
         <label className={classes.DiscountBtn}>
           <input type="checkbox" onChange={props.changeDiscountStatus} />
-          <span>für Neukunden -{props.discountValue * 100}%</span>
+          <span>
+            <i className={["fas", "fa-tags", classes.DiscountIcon].join(" ")} />
+            für Neukunden -{props.discountValue * 100}%
+          </span>
         </label>
       </div>
       <div className={classes.Time}>
-        <span>Erhalten Sie Ihre Übersetzung bis zum</span> <br />
+        <span>
+          <i className={["far", "fa-clock", classes.Icon].join(" ")} />
+          Erhalten Sie Ihre Übersetzung bis zum
+        </span>{" "}
+        <br />
         <span>{props.finalDate === 0 ? "" : props.finalDate}</span>
       </div>
       <input

@@ -8,10 +8,13 @@ class App extends Component {
   render() {
     return (
       <div className={classes.App}>
-        <h2 style={{ textAlign: "center" }}>Erhalten Sie Ihr Preisangebot</h2>
+        <h2 style={{ textAlign: "center", marginTop: "0px" }}>Erhalten Sie Ihr Preisangebot</h2>
         <div className={classes.CalcBody}>
           {this.props.showCalculatorScreen ? <CalculatorScreen /> : null}
           {this.props.showOrderFormScreen ? <OrderFormScreen /> : null}
+          <span className={classes.Security}>
+            <i className="fas fa-lock" />Sicherheitsgarantie
+          </span>
         </div>
       </div>
     );

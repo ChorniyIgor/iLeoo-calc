@@ -4,9 +4,39 @@
   padding-right: 20px;
   min-width: 300px;
   max-width: 30%;
-  background: rgba(255, 255, 255, 0.85);
   margin-right: 20px;
   text-align: left;
+}
+.OrderInfoSection h3 {
+  color: white;
+}
+.LangList {
+  color: white;
+  font-size: 18px;
+}
+.FilesList {
+  color: white;
+  font-size: 18px;
+  padding-left: 25px;
+}
+.FilesList h4 {
+  margin-left: -20px;
+  margin-bottom: 5px;
+}
+.OrderInfoSection h3 span {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  line-height: 30px;
+  background: white;
+  border-radius: 50%;
+  text-align: center;
+  color: black;
+  margin-right: 10px;
+}
+.TotalText {
+  font-size: 18px;
+  color: white;
 }
 .InputText {
   text-overflow: ellipsis;
@@ -15,4 +45,13 @@
   overflow: hidden;
   max-height: 20px;
   display: block;
+}
+.InputTextContainer {
+  font-size: 18px;
+}
+.InputTextContainer h4 {
+  margin-bottom: 5px;
+}
+.wordsCountInfo {
+  font-size: 18px;
 }

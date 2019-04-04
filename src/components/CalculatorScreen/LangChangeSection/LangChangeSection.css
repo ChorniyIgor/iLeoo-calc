@@ -16,9 +16,21 @@
 .LangChangeSection {
   min-width: 240px;
 }
+.SelectContainer {
+  display: flex;
+}
+.DeleteLang {
+  font-size: 22px;
+  line-height: 39px;
+  color: white;
+  cursor: pointer;
+  padding-left: 10px;
+  color: #d83b0a;
+}
 .Select {
   margin-bottom: 20px;
   cursor: pointer;
+  flex-grow: 1;
 }
 .LangChangeSectionNumb {
   text-align: left;
@@ -49,9 +61,9 @@
   border-radius: 5px;
   cursor: pointer;
 }
-.Security {
+
+.ArrowDown {
   color: white;
-  position: absolute;
-  bottom: 0;
-  left: 10px;
+  font-size: 70px;
+  margin-bottom: 20px;
 }

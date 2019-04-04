@@ -6,7 +6,7 @@
 .Price:after {
   content: "";
   display: block;
-  width: 2px;
+  width: 3px;
   height: 100%;
   background: rgba(0, 0, 0, 0.3);
   position: absolute;
@@ -17,7 +17,7 @@
   color: white;
   text-align: center;
   padding-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 47px;
 }
 .TotalPriceWrap {
   background: rgba(255, 255, 255, 0.85);
@@ -72,9 +72,20 @@
   height: 50px;
   color: white;
   margin-top: 25px;
+  position: relative;
+  padding-left: 50px;
+  font-size: 18px;
+  line-height: 50px;
 }
 .DiscountBtn input {
   display: none;
+}
+.DiscountIcon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 25px;
 }
 .DiscountBtn input:checked ~ span {
   margin-top: 27px;
@@ -86,6 +97,10 @@
   font-weight: 400;
   font-size: 14px;
   text-align: center;
+  margin-top: 10px;
+}
+.Icon {
+  margin-right: 5px;
 }
 .SendBtn {
   animation: blinking 3s infinite;
