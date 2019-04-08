@@ -4,12 +4,13 @@
   flex-grow: 1;
   margin-left: 20px;
   margin-right: 20px;
+  min-width: 291px;
 }
 
 .WordsCounterSectionNumb {
   text-align: left;
-  padding-top: 20px;
-  margin-bottom: 40px;
+  padding-top: 0px;
+  margin-bottom: 25px;
 }
 .WordsCounterSectionNumb i {
   width: 30px;
@@ -24,4 +25,25 @@
 .WordsCounterSectionNumb span {
   padding-left: 8px;
   color: white;
+}
+
+@media (max-width: 900px) {
+  .WordsCounterSection {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .WordsCounterSectionNumb {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .WordsCounterSection {
+    min-width: 200px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+  }
 }

@@ -37,12 +37,13 @@ const DownloadFilesMethod = props => {
                       <span className={classes.fileName}>{fileName}</span>
                       <span className={classes.wordsCount}>
                         {fileInfo.wordsCount === "unknown" ? (
-                          "неможливо визначити"
+                          "Error"
                         ) : fileInfo.wordsCount ? (
                           fileInfo.wordsCount
                         ) : (
                           <Loader />
                         )}
+                        <i class=" fas fa-times " />
                       </span>
                     </li>
                   );
@@ -52,19 +53,21 @@ const DownloadFilesMethod = props => {
           </div>
         </div>
       </div>
-      <label>
-        <span className={classes.DownloadFilesMethodWordsRes}>
-          Total: {props.filesWordsCountInput} Wörter
-        </span>
-      </label>
       <div>
-        {false ? (
-          <p>
+        {props.isFilesCountingError ? (
+          <div className={classes.ErrorMsg}>
+            <i className="fas fa-exclamation" />
             Ihre Datei ist erfolgreich zugefügt. Die Wörter sind leider nicht zahlbar, deshalb
             analysieren wir gern Ihre Datei und erstellen ein Angebot auf Basis des rechts
             angegebenen Wortpreises.
-          </p>
-        ) : null}
+          </div>
+        ) : (
+          <label>
+            <span className={classes.DownloadFilesMethodWordsRes}>
+              Total: {props.filesWordsCountInput} Wörter
+            </span>
+          </label>
+        )}
       </div>
     </div>
   );
@@ -72,7 +75,8 @@ const DownloadFilesMethod = props => {
 function mapStateToProps(state) {
   return {
     files: state.wordsCounter.files,
-    filesWordsCountInput: state.wordsCounter.filesWordsCountInput
+    filesWordsCountInput: state.wordsCounter.filesWordsCountInput,
+    isFilesCountingError: state.wordsCounter.isFilesCountingError
   };
 }
 function mapDispatchToProps(dispatch) {

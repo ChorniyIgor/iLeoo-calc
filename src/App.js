@@ -3,6 +3,7 @@ import CalculatorScreen from "./components/CalculatorScreen/CalculatorScreen";
 import OrderFormScreen from "./components/OrderFormScreen/OrderFormScreen";
 import classes from "./App.css";
 import { connect } from "react-redux";
+import Steps from "./components/Steps/Steps";
 
 class App extends Component {
   render() {
@@ -13,8 +14,10 @@ class App extends Component {
           {this.props.showCalculatorScreen ? <CalculatorScreen /> : null}
           {this.props.showOrderFormScreen ? <OrderFormScreen /> : null}
           <span className={classes.Security}>
-            <i className="fas fa-lock" />Sicherheitsgarantie
+            <i className="fas fa-lock" />
+            Sicherheitsgarantie
           </span>
+          <Steps />
         </div>
       </div>
     );

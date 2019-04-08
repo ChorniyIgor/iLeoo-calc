@@ -8,12 +8,21 @@ const PriceSection = props => {
   return (
     <section className={classes.Price}>
       <div className={classes.PriceHeader}>
-        <span>Kostenvoranschlag</span>
+        <span>Eingeschätzter Preis</span>
       </div>
       <div className={classes.TotalPriceWrap}>
         <div className={classes.TotalPriceValueWrap}>
-          <span className={classes.PriceValue}>{props.totalPrice.toFixed(2)} €</span>
-          <span className={classes.PricePerWordValue}>{props.pricePerWord / 100} €/Wort</span>
+          {props.isFilesCountingError && props.totalPrice === 0 ? (
+            <span className={classes.PriceValue}>
+              {props.pricePerWord / 100} <i>€/Wort</i>
+            </span>
+          ) : (
+            <span className={classes.PriceValue}>{props.totalPrice.toFixed(2)} €</span>
+          )}
+
+          {props.isFilesCountingError && props.totalPrice === 0 ? null : (
+            <span className={classes.PricePerWordValue}>{props.pricePerWord / 100} €/Wort</span>
+          )}
         </div>
         <span className={classes.MwSt}>zzgl. Grundpreis und MwSt.</span>
         <label className={classes.DiscountBtn}>
@@ -28,16 +37,13 @@ const PriceSection = props => {
         <span>
           <i className={["far", "fa-clock", classes.Icon].join(" ")} />
           Erhalten Sie Ihre Übersetzung bis zum
-        </span>{" "}
-        <br />
-        <span>{props.finalDate === 0 ? "" : props.finalDate}</span>
+        </span>
+        <p className={classes.DateItem}>{props.finalDate === 0 ? " " : props.finalDate}</p>
       </div>
-      <input
-        className={classes.SendBtn}
-        type="button"
-        value="Preisangebot erhalten"
-        onClick={props.showOrderFormScreen}
-      />
+      <button className={classes.SendBtn} onClick={props.showOrderFormScreen}>
+        Preisangebot erhalten
+        <i className="fas fa-angle-right" />
+      </button>
     </section>
   );
 };
@@ -47,7 +53,8 @@ function mapStateToProps(state) {
     pricePerWord: state.price.pricePerWord,
     totalPrice: state.price.totalPrice,
     finalDate: state.price.finalDate,
-    discountValue: state.price.discount.value
+    discountValue: state.price.discount.value,
+    isFilesCountingError: state.wordsCounter.isFilesCountingError
   };
 }
 function mapDispatchToProps(dispatch) {

@@ -1,11 +1,11 @@
 .Methods {
   flex-grow: 1;
-  min-height: 320px;
+  min-height: 280px;
 }
 .MethodsWordsRes {
   display: block;
   text-align: left;
-  padding-top: 15px;
+  padding-top: 11px;
   font-size: 24px;
   color: white;
 }
@@ -19,5 +19,17 @@
   height: 200px;
 }
 .Textarea {
-  height: 270px;
+  height: 234px;
+}
+
+@media (max-width: 500px) {
+  .Methods {
+    min-height: 209px;
+  }
+  .MethodsWordsRes {
+    font-size: 17px;
+  }
+  .Textarea {
+    height: 174px;
+  }
 }

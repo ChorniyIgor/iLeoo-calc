@@ -5,7 +5,8 @@ import {
   CHANGE_WORDS_COUNT_INPUT,
   DELETE_FILE,
   ADD_WORDS_COUNT_TO_FILE,
-  UPDATE_TOTAL_FILES_WORDS
+  UPDATE_TOTAL_FILES_WORDS,
+  CAHNGE_FILE_COUNTING_ERROR_VALUE
 } from "../actions/wordsCounter";
 
 const initialState = {
@@ -16,7 +17,8 @@ const initialState = {
     wordsCount: 0
   },
   filesWordsCountInput: 0,
-  files: {}
+  files: {},
+  isFilesCountingError: false
 };
 
 export default (state = initialState, action) => {
@@ -67,6 +69,12 @@ export default (state = initialState, action) => {
         ...state,
         method: action.methodName
       };
+    case CAHNGE_FILE_COUNTING_ERROR_VALUE: {
+      return {
+        ...state,
+        isFilesCountingError: action.newValue
+      };
+    }
     default:
       return { ...state };
   }

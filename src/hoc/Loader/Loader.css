@@ -2,15 +2,15 @@
   display: inline-block;
   position: relative;
   width: 64px;
-  height: 24px;
+  height: 16px;
 }
 .lds-ellipsis div {
   position: absolute;
-  top: 10px;
+  top: 3px;
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  background: blue;
+  background: white;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 .lds-ellipsis div:nth-child(1) {

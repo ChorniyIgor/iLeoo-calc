@@ -25,9 +25,7 @@ const OrderInfoSection = props => {
           return (
             <li key={i}>
               <span>{fileName} </span>
-              <span>
-                | {fileInfo.wordsCount === "unknown" ? "неможливо визначити" : fileInfo.wordsCount}
-              </span>
+              <span>{fileInfo.wordsCount === "unknown" ? "Error" : fileInfo.wordsCount}</span>
             </li>
           );
         })}
@@ -43,34 +41,32 @@ const OrderInfoSection = props => {
       <h3>
         <span>2</span>Angehangte Dateien
       </h3>
-      {props.method === "number_of_words" && props.wordsCountInput > 0 ? (
+      {props.wordsCountInput > 0 ? (
         <span className={classes.wordsCountInfo}>Words count: {props.wordsCountInput}</span>
       ) : null}
-      {props.method === "text_input" && props.textInput.contents.length > 0 ? (
+      {props.textInput.contents.length > 0 ? (
         <div className={classes.InputTextContainer}>
           <h4>Text:</h4>
           <span className={classes.InputText}>{props.textInput.contents}</span>
         </div>
       ) : null}
-      {props.method === "download_files" && Object.keys(props.files).length > 0 ? (
-        <span>{getFilesList(props.files)}</span>
-      ) : null}
+      {Object.keys(props.files).length > 0 ? getFilesList(props.files) : null}
       <h3>
         <span>3</span>Eingeschhatfer Priez
       </h3>
-      <div className={classes.TotalText}>
-        Total price <span>{props.totalPrice} €</span>
-      </div>
+      {props.totalPrice > 0 ? (
+        <div className={classes.TotalText}>
+          Total price <span>{props.totalPrice} €</span>
+        </div>
+      ) : null}
       <div className={classes.TotalText}>
         Price per word <span>{props.pricePerWord / 100} €/Wort</span>
       </div>
       {props.finalDate !== 0 ? (
-        <React.Fragment>
-          <div className={classes.TotalText}>Erhalten Sie Ihre Übersetzung bis zum</div>
-          <div className={classes.TotalText}>
-            <span>{props.finalDate}</span>
-          </div>
-        </React.Fragment>
+        <div className={classes.TotalText}>
+          Erhalten Sie Ihre Übersetzung bis zum <br />
+          {props.finalDate}
+        </div>
       ) : null}
     </div>
   );

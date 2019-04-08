@@ -1,0 +1,92 @@
+.Steps {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  position: relative;
+  bottom: 0;
+  left: 50%;
+  width: 475px;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  margin-bottom: 0;
+  justify-content: center;
+  align-items: center;
+}
+.Steps li {
+  padding-left: 50px;
+  position: relative;
+  font-size: 16px;
+  line-height: 22px;
+  word-wrap: normal;
+  color: rgba(255, 255, 255, 0.85);
+}
+.Steps li:before {
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 30px;
+  color: white;
+  transform: translateY(-50%);
+  background: #dddddd47;
+}
+.Steps li:nth-child(1):before {
+  content: "1";
+}
+.Steps li:nth-child(2):before {
+  content: "2";
+}
+.Steps li:nth-child(2) {
+  width: 120px;
+}
+.Steps .Active {
+  color: #eb7d13;
+}
+.Steps .Active:before {
+  color: #eb7d13;
+}
+.Steps li:nth-child(1) {
+  padding-right: 50px;
+}
+.Steps li:nth-child(1)::after {
+  content: "";
+  display: block;
+  background: white;
+  width: 30px;
+  height: 1px;
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 500px) {
+  .Steps {
+    width: 100%;
+    left: 0;
+    transform: none;
+  }
+  .Steps li {
+    font-size: 14px;
+    padding-left: 29px;
+  }
+  .Steps li:before {
+    left: 2px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+  }
+  .Steps li:nth-child(2) {
+    min-width: 100px;
+  }
+  .Steps li:nth-child(1) {
+    padding-right: 25px;
+  }
+  .Steps li:nth-child(1)::after {
+    width: 15px;
+  }
+}

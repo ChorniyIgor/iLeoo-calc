@@ -1,3 +1,9 @@
 .CalculatorScreen {
   display: flex;
 }
+@media (max-width: 900px) {
+  .CalculatorScreen {
+    display: flex;
+    flex-direction: column;
+  }
+}

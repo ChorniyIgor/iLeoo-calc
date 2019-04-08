@@ -2,13 +2,15 @@
   display: flex;
   flex-grow: 1;
   color: white;
-  margin-top: 20px;
+  padding-top: 27px;
+  align-items: center;
 }
 .BackBtn {
   display: block;
   outline: none;
   border: none;
-  background: rgba(255, 255, 255, 0.9);
+  background: #dd7a1a80;
+  color: white;
   font-size: 17px;
   cursor: pointer;
   opacity: 1;
@@ -16,9 +18,12 @@
   padding: 4px 25px;
   padding-left: 10px;
   border-radius: 5px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
 .ArrowLeft {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .BackBtn:hover {
   opacity: 0.9;

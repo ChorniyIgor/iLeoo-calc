@@ -36,7 +36,7 @@ const Method = props => {
         <div id="countSimbol">
           <Textarea
             name="text_input"
-            placeholder="Text eingeben..."
+            placeholder="Zu übersetzender Text eingeben"
             id="input_textarea"
             defaultValue={props.textInput.contents}
             className={classes.Textarea}

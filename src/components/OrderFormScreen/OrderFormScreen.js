@@ -9,7 +9,7 @@ const OrderFormScreen = props => {
   return (
     <React.Fragment>
       <button className={classes.BackBtn} onClick={props.showCalculatorScreen}>
-        <i className={["fas", "fa-arrow-left", classes.ArrowLeft].join(" ")} /> Back
+        <i className={["fas", "fa-chevron-left", classes.ArrowLeft].join(" ")} /> Back
       </button>
       <div className={classes.OrderFormScreen}>
         <OrderInfoSection />

@@ -7,6 +7,42 @@ export const ADD_FILE = "ADD_FILE";
 export const ADD_WORDS_COUNT_TO_FILE = "ADD_WORDS_COUNT_TO_FILE";
 export const UPDATE_TOTAL_FILES_WORDS = "UPDATE_TOTAL_FILES_WORDS";
 export const DELETE_FILE = "DELETE_FILE";
+export const CAHNGE_FILE_COUNTING_ERROR_VALUE = "CAHNGE_FILE_COUNTING_ERROR_VALUE";
+
+export function getTotalWordsCount({ wordsCounter }) {
+  const wordsCountInput = wordsCounter.wordsCountInput;
+  const wordsCountTextInput = wordsCounter.textInput.wordsCount;
+  const wordsCountFiles = wordsCounter.filesWordsCountInput;
+  const isFilesCountingError = wordsCounter.isFilesCountingError;
+  const loadedFileCount = Object.keys(wordsCounter.files).length;
+
+  let totalWordsCount = 0;
+  //Документи загрузились і усі слова успішно підраховані
+  if (loadedFileCount > 0 && !isFilesCountingError) {
+    console.log("Документи загрузились і усі слова успішно підраховані");
+    totalWordsCount = wordsCountTextInput + wordsCountFiles;
+  }
+  //Під час підрахунку слів виникла помилка
+  else if (loadedFileCount > 0 && isFilesCountingError) {
+    console.log("Під час підрахунку слів виникла помилка");
+    totalWordsCount = wordsCountInput + wordsCountTextInput;
+  }
+  //Документи взагалі не прикріплювали ввели просто текст
+  else if (loadedFileCount === 0 && wordsCountTextInput > 0) {
+    console.log("Документи взагалі не прикріплювали");
+    totalWordsCount = wordsCountTextInput;
+  }
+  //Ввели лише кількість слів
+  else if (loadedFileCount === 0 && wordsCountTextInput === 0 && wordsCountInput > 0) {
+    console.log("Ввели лише кількість слів");
+    totalWordsCount = wordsCountInput;
+  } else {
+    totalWordsCount = 0;
+  }
+
+  console.log("totalWordsCount ", totalWordsCount);
+  return totalWordsCount;
+}
 
 export function setMethodOfCalcWords(methodName) {
   return dispatch => {
@@ -82,7 +118,30 @@ export function checkWordsCountInFile(file) {
         wordsCount
       }
     });
+    dispatch(checkFilesForCountingError());
     dispatch(updateTotalFilesWords());
+  };
+}
+
+export function checkFilesForCountingError() {
+  return (dispatch, getState) => {
+    const files = getState().wordsCounter.files;
+    const isErrorInState = getState().wordsCounter.isFilesCountingError;
+
+    let actualIsError = false;
+    for (const fileName in files) {
+      const file = files[fileName];
+      if (file.wordsCount === "unknown") {
+        actualIsError = true;
+      }
+    }
+
+    if (isErrorInState !== actualIsError) {
+      dispatch({
+        type: CAHNGE_FILE_COUNTING_ERROR_VALUE,
+        newValue: actualIsError
+      });
+    }
   };
 }
 
@@ -108,6 +167,7 @@ export function deleteFile(fileName) {
       type: DELETE_FILE,
       fileName
     });
+    dispatch(checkFilesForCountingError());
     dispatch(updateTotalFilesWords());
   };
 }

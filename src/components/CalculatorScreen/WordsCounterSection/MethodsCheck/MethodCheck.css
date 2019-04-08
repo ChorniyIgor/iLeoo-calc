@@ -28,3 +28,13 @@
   margin-right: 5px;
   font-size: 20px;
 }
+
+@media (max-width: 500px) {
+  .MethodCheck label {
+    padding: 5px;
+    font-size: 14px;
+  }
+  .Icon {
+    font-size: 14px;
+  }
+}
