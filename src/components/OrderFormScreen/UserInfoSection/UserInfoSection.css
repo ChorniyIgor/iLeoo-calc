@@ -17,6 +17,7 @@
 .UserInfoSectionHeader {
   color: white;
   margin-bottom: 50px;
+  margin-top: 0;
 }
 .InputLabel {
   max-width: 300px;
@@ -65,7 +66,7 @@
   width: 50%;
   display: block;
   margin-left: auto;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 @keyframes blinking {
@@ -77,5 +78,35 @@
   }
   100% {
     background: #eb7d13;
+  }
+}
+
+@media (max-width: 900px) {
+  .UserInfoSection {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .UserInfoSection:before {
+    display: none;
+  }
+  .UserInfoSectionHeader {
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+  .FormInputContainer {
+    flex-direction: column;
+  }
+  .InputLabel {
+    max-width: 100%;
+  }
+  .TextareaLabel {
+    padding-left: 0;
+  }
+  .Textarea {
+    height: 90px;
+  }
+  .sendBtn {
+    width: 100%;
+    margin-bottom: 25px;
   }
 }

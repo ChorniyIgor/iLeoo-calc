@@ -20,22 +20,55 @@
 .Drag_zone {
   border: 2px dashed #403d3b;
   width: 100%;
-  height: 210px;
+  height: 115px;
   outline: none;
   position: relative;
+}
+.isDragActive {
+  border: 2px dashed red;
+  width: 100%;
+  height: 115px;
+  outline: none;
+  position: relative;
+}
+.isDragActive::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000000000000000000000000000;
+}
+.isDragActive::after {
+  content: "put your file here";
+  line-height: 80vh;
+  text-transform: uppercase;
+  font-size: 50px;
+  color: black;
+  position: fixed;
+  width: 90%;
+  height: 80vh;
+  border: 2px solid white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 1000000000000000000000000001;
 }
 .Drag_zoneList {
   list-style: none;
   padding: 0;
   margin: 0;
-  height: 200px;
+  height: 115px;
   overflow: auto;
 }
 .Drag_zoneList li {
   background: #eb7d13;
   color: white;
-  margin-bottom: 5px;
-  padding: 3px 20px;
+  margin-bottom: 2px;
+  padding: 3px 25px;
   padding-left: 5px;
   position: relative;
   cursor: pointer;
@@ -53,7 +86,7 @@
   top: 50%;
   color: white;
   transform: translateY(-50%);
-  opacity: 0;
+  opacity: 0.5;
   transition: opacity 0.3s;
 }
 .Drag_zoneList li:hover i {
@@ -61,10 +94,14 @@
 }
 .Drag_zoneList li {
   display: flex;
+  align-items: center;
 }
 .fileName {
   flex-basis: 75%;
   padding-right: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .wordsCount {
   flex-basis: 25%;
@@ -104,5 +141,11 @@
   }
   .Drag_zoneList {
     height: 150px;
+  }
+  .Drag_zoneList li i {
+    opacity: 0.7;
+  }
+  .wordsCount {
+    flex-basis: 13%;
   }
 }

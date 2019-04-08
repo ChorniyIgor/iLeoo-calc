@@ -8,8 +8,9 @@
   content: "";
   display: block;
   width: 2px;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  height: 85.5%;
+  min-height: 310px;
+  background: rgba(0, 0, 0, 0.5);
   position: absolute;
   top: 0;
   right: 0;
@@ -44,11 +45,15 @@
   background: white;
   border-radius: 50%;
   text-align: center;
+  font-style: normal;
+  font-size: 20px;
 }
 
 .LangChangeSectionNumb span {
   padding-left: 8px;
   color: white;
+  font-weight: 700;
+  font-size: 20px;
 }
 
 .AddLangBtn {
@@ -64,7 +69,8 @@
 .ArrowDown {
   color: white;
   font-size: 70px;
-  margin-bottom: 20px;
+  margin-top: 7px;
+  margin-bottom: 27px;
 }
 
 @media (max-width: 900px) {
@@ -74,12 +80,19 @@
   .LangChangeSection:after {
     display: none;
   }
+  .LangChangeSectionNumb {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  .LangChangeSection {
+    padding-bottom: 25px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+  }
 }
 
 @media (max-width: 500px) {
   .LangChangeSectionNumb {
-    text-align: center;
-    font-size: 18px;
     margin-bottom: 10px;
   }
   .ArrowDown {
@@ -88,9 +101,5 @@
   }
   .Select {
     margin-bottom: 10px;
-  }
-  .LangChangeSection {
-    padding-bottom: 25px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
   }
 }

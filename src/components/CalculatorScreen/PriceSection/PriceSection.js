@@ -41,7 +41,8 @@ const PriceSection = props => {
         <p className={classes.DateItem}>{props.finalDate === 0 ? " " : props.finalDate}</p>
       </div>
       <button className={classes.SendBtn} onClick={props.showOrderFormScreen}>
-        Preisangebot erhalten
+        Angebot anfordern <br />
+        <span>(max. 10 Min. Wartezeit)</span>
         <i className="fas fa-angle-right" />
       </button>
     </section>

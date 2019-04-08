@@ -111,12 +111,9 @@ const LangChangeSection = props => {
       })}
 
       {props.targetLanguagesItems.length < 5 ? (
-        <input
-          type="button"
-          value="+ Add new target lang"
-          onClick={props.addNewTargetLang}
-          className={classes.AddLangBtn}
-        />
+        <button onClick={props.addNewTargetLang} className={classes.AddLangBtn}>
+          + Add new target lang
+        </button>
       ) : null}
     </section>
   );

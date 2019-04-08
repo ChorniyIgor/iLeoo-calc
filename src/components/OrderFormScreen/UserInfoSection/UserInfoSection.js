@@ -23,7 +23,9 @@ const UserInfoSection = props => {
 
   return (
     <div className={classes.UserInfoSection}>
-      <h2 className={classes.UserInfoSectionHeader}>Для завершення замовлення заповніть форму</h2>
+      <h2 className={classes.UserInfoSectionHeader}>
+        Füllen Sie das Formular, um die Bestellung abzuschließen
+      </h2>
       <form ref={formRef}>
         <div className={classes.FormInputContainer}>
           <div>

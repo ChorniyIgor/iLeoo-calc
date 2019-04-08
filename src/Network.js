@@ -27,7 +27,8 @@ class Network {
   }
 
   async sendFileToTextomate(doc) {
-    var data = new FormData();
+    const data = new FormData();
+    const fileName = doc.name;
     data.append("send_file", doc);
     try {
       const resp = await fetch("https://www.ileoo.de/test1/file.php", {
@@ -35,9 +36,9 @@ class Network {
         body: data
       });
       const respRes = await resp.json();
-      return respRes;
+      return { respRes, fileName };
     } catch (e) {
-      console.log(e, "Error!!!");
+      return { respRes: undefined, fileName };
     }
   }
 }

@@ -7,9 +7,10 @@
 .Price:after {
   content: "";
   display: block;
-  width: 3px;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  width: 2px;
+  height: 85.5%;
+  min-height: 310px;
+  background: rgba(0, 0, 0, 0.5);
   position: absolute;
   top: 0;
   left: 0;
@@ -19,6 +20,8 @@
   text-align: center;
   padding-top: 0px;
   margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 20px;
 }
 .TotalPriceWrap {
   background: rgba(255, 255, 255, 0.85);
@@ -119,16 +122,20 @@
   outline: none;
   border: none;
   font-size: 20px;
-  line-height: 25px;
-  padding: 8px 5px;
+  line-height: 20px;
+  padding: 5px 5px;
   border-radius: 5px;
   cursor: pointer;
   right: 0;
   width: 100%;
   min-width: 210px;
-  margin-top: 35px;
+  margin-top: 5px;
   padding-right: 18px;
   position: relative;
+}
+.SendBtn span {
+  font-size: 14px;
+  line-height: 16px;
 }
 .SendBtn i {
   font-size: 30px;
@@ -161,22 +168,26 @@
   .Price:after {
     display: none;
   }
-}
-
-@media (max-width: 500px) {
   .PriceHeader {
     font-size: 18px;
     margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  .TotalPriceWrap {
-    min-height: 130px;
+    margin-bottom: 15px;
   }
   .DiscountBtn span {
     margin-top: 5px;
     font-size: 16px;
     line-height: 45px;
   }
+}
+
+@media (max-width: 500px) {
+  .PriceHeader {
+    margin-bottom: 10px;
+  }
+  .TotalPriceWrap {
+    min-height: 130px;
+  }
+
   .SendBtn {
     margin-top: 10px;
     margin-bottom: 10px;

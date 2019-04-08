@@ -64,8 +64,7 @@ const OrderInfoSection = props => {
       </div>
       {props.finalDate !== 0 ? (
         <div className={classes.TotalText}>
-          Erhalten Sie Ihre Übersetzung bis zum <br />
-          {props.finalDate}
+          Erhalten Sie Ihre Übersetzung bis zum {props.finalDate}
         </div>
       ) : null}
     </div>

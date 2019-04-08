@@ -8,7 +8,7 @@ import {
 } from "../../../../redux/actions/wordsCounter";
 import Textarea from "../../../../hoc/Textarea/Textarea";
 import Input from "../../../../hoc/Input/Input";
-
+import Steps from "../../../Steps/Steps";
 import DownloadFilesMethod from "./DownloadFilesMethod/DownloadFilesMethod";
 const Method = props => {
   return (
@@ -53,6 +53,7 @@ const Method = props => {
       ) : null}
 
       {props.methodOfCalc === "download_files" ? <DownloadFilesMethod /> : null}
+      <Steps inWordsCountingSection={true} />
     </div>
   );
 };

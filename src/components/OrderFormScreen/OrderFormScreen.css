@@ -2,8 +2,6 @@
   display: flex;
   flex-grow: 1;
   color: white;
-  padding-top: 27px;
-  align-items: center;
 }
 .BackBtn {
   display: block;
@@ -27,4 +25,12 @@
 }
 .BackBtn:hover {
   opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+  .OrderFormScreen {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    padding-top: 35px;
+  }
 }

@@ -11,6 +11,9 @@ const DownloadFilesMethod = props => {
     onDrop: props.addFiles
   });
 
+  const DragZoneStyles = [classes.Drag_zone];
+  if (isDragActive) DragZoneStyles.push(classes.isDragActive);
+
   return (
     <div>
       <div>
@@ -18,38 +21,34 @@ const DownloadFilesMethod = props => {
           <div className={classes.Drag_zoneLogo}>
             <img src={img} alt="Drop zone" />
           </div>
-          <div {...getRootProps()} className={classes.Drag_zone}>
+          <div {...getRootProps()} className={DragZoneStyles.join(" ")}>
             <input {...getInputProps()} />
-            {isDragActive ? (
-              <p>Отпути:)</p>
-            ) : (
-              <ul className={classes.Drag_zoneList}>
-                {Object.keys(props.files).map((fileName, i) => {
-                  const fileInfo = props.files[fileName];
-                  return (
-                    <li
-                      key={i}
-                      onClick={evt => {
-                        evt.stopPropagation();
-                        props.deleteFile(fileName);
-                      }}
-                    >
-                      <span className={classes.fileName}>{fileName}</span>
-                      <span className={classes.wordsCount}>
-                        {fileInfo.wordsCount === "unknown" ? (
-                          "Error"
-                        ) : fileInfo.wordsCount ? (
-                          fileInfo.wordsCount
-                        ) : (
-                          <Loader />
-                        )}
-                        <i class=" fas fa-times " />
-                      </span>
-                    </li>
-                  );
-                })}
-              </ul>
-            )}
+            <ul className={classes.Drag_zoneList}>
+              {Object.keys(props.files).map((fileName, i) => {
+                const fileInfo = props.files[fileName];
+                return (
+                  <li
+                    key={i}
+                    onClick={evt => {
+                      evt.stopPropagation();
+                      props.deleteFile(fileName);
+                    }}
+                  >
+                    <span className={classes.fileName}>{fileName}</span>
+                    <span className={classes.wordsCount}>
+                      {fileInfo.wordsCount === "unknown" ? (
+                        "Error"
+                      ) : fileInfo.wordsCount ? (
+                        fileInfo.wordsCount
+                      ) : (
+                        <Loader />
+                      )}
+                      <i className=" fas fa-times " />
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </div>
       </div>

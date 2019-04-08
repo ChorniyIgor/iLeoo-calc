@@ -5,12 +5,15 @@
   margin-left: 20px;
   margin-right: 20px;
   min-width: 291px;
+  position: relative;
+  padding-bottom: 50px;
 }
 
 .WordsCounterSectionNumb {
   text-align: left;
   padding-top: 0px;
   margin-bottom: 25px;
+  font-size: 20px;
 }
 .WordsCounterSectionNumb i {
   width: 30px;
@@ -20,6 +23,8 @@
   background: white;
   border-radius: 50%;
   text-align: center;
+  font-style: normal;
+  font-size: 20px;
 }
 
 .WordsCounterSectionNumb span {
@@ -32,18 +37,21 @@
     margin-left: 0;
     margin-right: 0;
   }
-}
-
-@media (max-width: 500px) {
-  .WordsCounterSectionNumb {
-    text-align: center;
-    font-size: 18px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
   .WordsCounterSection {
     min-width: 200px;
     padding-bottom: 10px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+  }
+  .WordsCounterSectionNumb {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .WordsCounterSectionNumb {
+    margin-bottom: 10px;
   }
 }

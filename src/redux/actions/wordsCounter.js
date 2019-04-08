@@ -19,28 +19,23 @@ export function getTotalWordsCount({ wordsCounter }) {
   let totalWordsCount = 0;
   //Документи загрузились і усі слова успішно підраховані
   if (loadedFileCount > 0 && !isFilesCountingError) {
-    console.log("Документи загрузились і усі слова успішно підраховані");
     totalWordsCount = wordsCountTextInput + wordsCountFiles;
   }
   //Під час підрахунку слів виникла помилка
   else if (loadedFileCount > 0 && isFilesCountingError) {
-    console.log("Під час підрахунку слів виникла помилка");
     totalWordsCount = wordsCountInput + wordsCountTextInput;
   }
   //Документи взагалі не прикріплювали ввели просто текст
   else if (loadedFileCount === 0 && wordsCountTextInput > 0) {
-    console.log("Документи взагалі не прикріплювали");
     totalWordsCount = wordsCountTextInput;
   }
   //Ввели лише кількість слів
   else if (loadedFileCount === 0 && wordsCountTextInput === 0 && wordsCountInput > 0) {
-    console.log("Ввели лише кількість слів");
     totalWordsCount = wordsCountInput;
   } else {
     totalWordsCount = 0;
   }
 
-  console.log("totalWordsCount ", totalWordsCount);
   return totalWordsCount;
 }
 
@@ -105,12 +100,14 @@ export function updateTotalFilesWords() {
 }
 
 export function checkWordsCountInFile(file) {
-  return async (dispatch, getState) => {
-    const resp = await Network.sendFileToTextomate(file);
+  return async dispatch => {
+    const { respRes: resp, fileName } = await Network.sendFileToTextomate(file);
 
-    const fileName = resp.countedFiles[0].fileName;
-    let wordsCount = resp.countedFiles[0].wordsNumberNN;
-    wordsCount = wordsCount < 20 ? "unknown" : wordsCount;
+    let wordsCount;
+    if (resp !== undefined) {
+      wordsCount = resp.countedFiles[0].wordsNumberNN;
+      wordsCount = wordsCount < 20 ? "unknown" : wordsCount;
+    } else wordsCount = "unknown";
     dispatch({
       type: ADD_WORDS_COUNT_TO_FILE,
       fileInfo: {

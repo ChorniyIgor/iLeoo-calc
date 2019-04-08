@@ -1,6 +1,6 @@
 .Methods {
   flex-grow: 1;
-  min-height: 280px;
+  min-height: 195px;
 }
 .MethodsWordsRes {
   display: block;
@@ -19,7 +19,7 @@
   height: 200px;
 }
 .Textarea {
-  height: 234px;
+  height: 139px;
 }
 
 @media (max-width: 500px) {
