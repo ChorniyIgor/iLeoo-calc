@@ -42,7 +42,7 @@ const PriceSection = props => {
       </div>
       <button className={classes.SendBtn} onClick={props.showOrderFormScreen}>
         Angebot anfordern <br />
-        <span>(max. 10 Min. Wartezeit)</span>
+        <span>(Wartezeit von max. 10 Min.)</span>
         <i className="fas fa-angle-right" />
       </button>
     </section>

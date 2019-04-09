@@ -23,6 +23,8 @@
   margin-bottom: 2px;
   text-align: center;
   font-size: 15px;
+  padding: 2px 3px;
+  border-radius: 4px;
 }
 .FilesList {
   color: white;
@@ -39,10 +41,12 @@
 }
 .FilesList li {
   background: #eb7d13;
-  margin-bottom: 1px;
+  margin-bottom: 2px;
   text-align: center;
   font-size: 15px;
   display: flex;
+  padding: 2px 3px;
+  border-radius: 4px;
 }
 .FilesList li span:nth-child(1) {
   flex-grow: 1;
@@ -71,8 +75,13 @@
 .TotalText {
   font-size: 16px;
   color: white;
-  padding-left: 40px;
+  margin-left: 40px;
   margin-bottom: 7px;
+  padding: 2px 3px;
+}
+.TotalTextPrice {
+  background: #eb7d13;
+  border-radius: 4px;
 }
 .InputText {
   text-overflow: ellipsis;
@@ -83,6 +92,8 @@
   background: #eb7d13;
   font-size: 15px;
   padding-left: 3px;
+  padding: 2px 3px;
+  border-radius: 4px;
 }
 .InputTextContainer {
   font-size: 18px;
@@ -98,6 +109,8 @@
   margin-left: 40px;
   display: block;
   text-align: center;
+  padding: 2px 3px;
+  border-radius: 4px;
 }
 
 @media (max-width: 900px) {

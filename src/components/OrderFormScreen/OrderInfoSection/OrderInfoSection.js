@@ -39,7 +39,7 @@ const OrderInfoSection = props => {
       </h3>
       {getLanguagesList(props.languages)}
       <h3>
-        <span>2</span>Angehangte Dateien
+        <span>2</span>Angehängte Dateien
       </h3>
       {props.wordsCountInput > 0 ? (
         <span className={classes.wordsCountInfo}>Words count: {props.wordsCountInput}</span>
@@ -52,16 +52,23 @@ const OrderInfoSection = props => {
       ) : null}
       {Object.keys(props.files).length > 0 ? getFilesList(props.files) : null}
       <h3>
-        <span>3</span>Eingeschhatfer Priez
+        <span>3</span>Eingeschätzter Preis
       </h3>
       {props.totalPrice > 0 ? (
-        <div className={classes.TotalText}>
-          Total price <span>{props.totalPrice} €</span>
+        <React.Fragment>
+          <div className={[classes.TotalText, classes.TotalTextPrice].join(" ")}>
+            Total price <span>{props.totalPrice} €</span>
+          </div>
+          <div className={classes.TotalText}>
+            Preis pro Wort <span>{props.pricePerWord / 100} €/Wort</span>
+          </div>
+        </React.Fragment>
+      ) : (
+        <div className={[classes.TotalText, classes.TotalTextPrice].join(" ")}>
+          Preis pro Wort <span>{props.pricePerWord / 100} €/Wort</span>
         </div>
-      ) : null}
-      <div className={classes.TotalText}>
-        Price per word <span>{props.pricePerWord / 100} €/Wort</span>
-      </div>
+      )}
+
       {props.finalDate !== 0 ? (
         <div className={classes.TotalText}>
           Erhalten Sie Ihre Übersetzung bis zum {props.finalDate}

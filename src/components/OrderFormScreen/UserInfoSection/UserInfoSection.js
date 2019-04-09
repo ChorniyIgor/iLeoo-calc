@@ -24,16 +24,16 @@ const UserInfoSection = props => {
   return (
     <div className={classes.UserInfoSection}>
       <h2 className={classes.UserInfoSectionHeader}>
-        Füllen Sie das Formular, um die Bestellung abzuschließen
+        Der letzte Schritt zum persönlichen Preisangebot..
       </h2>
       <form ref={formRef}>
         <div className={classes.FormInputContainer}>
           <div>
             <label className={classes.InputLabel}>
-              <Input type="text" name="lastName" placeholder="Nachname" />
+              <Input type="text" name="email" placeholder="Email" />
             </label>
             <label className={classes.InputLabel}>
-              <Input type="text" name="email" placeholder="Email" />
+              <Input type="text" name="lastName" placeholder="Nachname" />
             </label>
             <label className={classes.InputLabel}>
               <Input type="text" name="name" placeholder="Vorname" />
@@ -43,12 +43,10 @@ const UserInfoSection = props => {
             <Textarea className={classes.Textarea} name="message" placeholder="Anmerkungen" />
           </label>
         </div>
-        <input
-          type="submit"
-          value="Absenden"
-          onClick={onSubmitBtnClick}
-          className={classes.sendBtn}
-        />
+        <button onClick={onSubmitBtnClick} className={classes.sendBtn}>
+          Absenden<br />
+          <span>(Wartezeit von max. 10 Min.)</span>
+        </button>
       </form>
     </div>
   );

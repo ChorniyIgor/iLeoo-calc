@@ -56,9 +56,9 @@ const DownloadFilesMethod = props => {
         {props.isFilesCountingError ? (
           <div className={classes.ErrorMsg}>
             <i className="fas fa-exclamation" />
-            Ihre Datei ist erfolgreich zugefügt. Die Wörter sind leider nicht zahlbar, deshalb
-            analysieren wir gern Ihre Datei und erstellen ein Angebot auf Basis des rechts
-            angegebenen Wortpreises.
+            Ihre Datei(-en) ist(sind) erfolgreich zugefügt. Die Wörter sind leider nicht zahlbar,
+            deshalb analysieren wir gern Ihre Datei(-en) und erstellen ein Angebot auf Basis des
+            rechts angegebenen Wortpreises.
           </div>
         ) : (
           <label>
