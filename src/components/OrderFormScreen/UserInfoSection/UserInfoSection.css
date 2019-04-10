@@ -46,7 +46,7 @@
   display: block;
 }
 .Textarea {
-  height: 147px;
+  height: 157px;
   max-width: 600px;
   display: block;
 }
@@ -66,11 +66,18 @@
   width: 50%;
   display: block;
   margin-left: auto;
-  margin-top: 30px;
+  margin-top: 15px;
 }
 .sendBtn span {
   font-size: 14px;
   line-height: 16px;
+}
+.ValidationError {
+  color: #a10b0b;
+  height: 20px;
+  line-height: 20px;
+  display: block;
+  font-size: 20px;
 }
 
 @keyframes blinking {
@@ -89,6 +96,7 @@
   .UserInfoSection {
     padding-left: 0;
     padding-right: 0;
+    width: 100%;
   }
   .UserInfoSection:before {
     display: none;
@@ -112,5 +120,12 @@
   .sendBtn {
     width: 100%;
     margin-bottom: 25px;
+    margin-top: 5px;
+  }
+  .ValidationError {
+    padding-top: 10px;
+    font-size: 17px;
+    line-height: 20px;
+    height: auto;
   }
 }

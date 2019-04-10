@@ -1,17 +1,17 @@
 .App {
-  background: url("./assets/img/bg.jpg") center;
+  background: #f9f9f9;
   min-height: 100vh;
+  box-sizing: border-box;
   padding-left: 20px;
   padding-right: 20px;
   font-family: "MyriadProRegular", sans-serif;
   padding-bottom: 20px;
 }
 .CalcBody {
-  background: rgba(0, 0, 0, 0.85);
+  background: url("./assets/img/bg-line.png"), black;
   text-align: center;
   padding: 20px;
   padding-bottom: 30px;
-  min-height: 300px;
   width: 95%;
   max-width: 1040px;
   border-radius: 20px;
@@ -33,6 +33,7 @@
   .CalcBody {
     max-width: 600px;
     box-sizing: border-box;
+    padding-bottom: 70px;
   }
 }
 
@@ -41,7 +42,7 @@
     margin-left: 0;
     margin-right: 0;
     width: 100%;
-    padding-bottom: 40px;
+    padding-bottom: 70px;
   }
   .Security {
     left: 50%;

@@ -1,6 +1,7 @@
 import Network from "../../Network";
 export const SHOW_ORDER_FORM_SCREEN = "SHOW_ORDER_FORM_SCREEN";
 export const SHOW_CALCULATOR_SCREEN = "SHOW_CALCULATOR_SCREEN";
+export const SHOW_ORDER_SUCCESSGUL_SCREEN = "SHOW_ORDER_SUCCESSGUL_SCREEN";
 export const SEND_ORDER_MESSAGE = "SEND_ORDER_MESSAGE";
 
 export function showOrderFormScreen() {
@@ -12,6 +13,12 @@ export function showOrderFormScreen() {
 export function showCalculatorScreen() {
   return {
     type: SHOW_CALCULATOR_SCREEN
+  };
+}
+
+export function showOrderSuccessfulScreen() {
+  return {
+    type: SHOW_ORDER_SUCCESSGUL_SCREEN
   };
 }
 

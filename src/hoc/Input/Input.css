@@ -1,8 +1,11 @@
 .Input {
   width: 100%;
   box-sizing: border-box;
+  border: 2px solid white;
   outline: none;
-  border: none;
   resize: none;
   padding: 10px;
+}
+.inCorrectInput {
+  border: 2px solid #ee4d4d;
 }

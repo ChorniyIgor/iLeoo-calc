@@ -1,8 +1,13 @@
-import { SHOW_ORDER_FORM_SCREEN, SHOW_CALCULATOR_SCREEN } from "../actions/app";
+import {
+  SHOW_ORDER_FORM_SCREEN,
+  SHOW_CALCULATOR_SCREEN,
+  SHOW_ORDER_SUCCESSGUL_SCREEN
+} from "../actions/app";
 
 const initialState = {
   showOrderFormScreen: false,
-  showCalculatorScreen: true
+  showCalculatorScreen: false,
+  showOrderSuccessfulScreen: true
 };
 
 export default (state = initialState, action) => {
@@ -11,13 +16,22 @@ export default (state = initialState, action) => {
       return {
         ...state,
         showOrderFormScreen: true,
-        showCalculatorScreen: false
+        showCalculatorScreen: false,
+        showOrderSuccessfulScreen: false
       };
     case SHOW_CALCULATOR_SCREEN:
       return {
         ...state,
         showOrderFormScreen: false,
-        showCalculatorScreen: true
+        showCalculatorScreen: true,
+        showOrderSuccessfulScreen: false
+      };
+    case SHOW_ORDER_SUCCESSGUL_SCREEN:
+      return {
+        ...state,
+        showOrderFormScreen: false,
+        showCalculatorScreen: false,
+        showOrderSuccessfulScreen: true
       };
     default:
       return { ...state };

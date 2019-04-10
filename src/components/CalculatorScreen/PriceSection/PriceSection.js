@@ -24,7 +24,7 @@ const PriceSection = props => {
             <span className={classes.PricePerWordValue}>{props.pricePerWord / 100} €/Wort</span>
           )}
         </div>
-        <span className={classes.MwSt}>zzgl. Grundpreis und MwSt.</span>
+        <span className={classes.MwSt}>zzgl. MwSt.</span>
         <label className={classes.DiscountBtn}>
           <input type="checkbox" onChange={props.changeDiscountStatus} />
           <span>
